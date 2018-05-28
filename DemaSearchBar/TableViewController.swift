@@ -30,7 +30,7 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
         if searchController.searchBar.text == "" {
             filtered = arrayString
         } else {
-            filtered = arrayString.filter { $0.contains(searchController.searchBar.text!) }
+            filtered = arrayString.filter { $0.contains(searchController.searchBar.text!.lowercased()) }
         }
         tableView.reloadData()
     }
